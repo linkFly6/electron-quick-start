@@ -40,6 +40,9 @@ gulp.task('watch', function () {
   gulp.watch('src/renderer/**', ['webpack:build'])
 })
 
+/**
+ * @TODO console 支持 color
+ */
 
 /**
  * 默认任务，先 watch 让 electron start，然后 build
