@@ -12,10 +12,10 @@ let common_config = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: [
-          /node_modules/,
-          path.resolve(__dirname, '')
-        ]
+        // exclude: [
+        //   /node_modules/,
+        //   path.resolve(__dirname, '')
+        // ]
       },
       {
         test: /\.styl$/,

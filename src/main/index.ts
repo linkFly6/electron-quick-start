@@ -10,7 +10,8 @@ function createWindow() {
   win = new BrowserWindow({ width: 800, height: 600 })
 
   // 然后加载应用的 index.html。
-  win.loadFile('../renderer/index.html')
+  // @TODO dist 目录要修正
+  win.loadFile('./dist/renderer/index.html')
 
   // 打开开发者工具
   win.webContents.openDevTools()

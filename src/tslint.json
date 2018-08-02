@@ -39,7 +39,7 @@
     // // 结束语句后的分号
     "semicolon": [
       true,
-      "never"
+      "always"
     ],
     // 字符串强制单引号
     "quotemark": [
