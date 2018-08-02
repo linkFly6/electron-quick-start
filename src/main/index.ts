@@ -1,5 +1,4 @@
 import { BrowserWindow, app } from 'electron';
-const client = require('electron-connect').client;
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -17,9 +16,13 @@ function createWindow() {
   // 打开开发者工具
   win.webContents.openDevTools();
 
+  console.log(process.env);
+
   if (process.env.NODE_ENV === 'development') {
     // Connect to server process
-    client.create(win);
+    require('electron-connect').client.create(win, {
+      logLevel: 1,
+    });
   }
   // 当 window 被关闭，这个事件会被触发。
   win.on('closed', () => {

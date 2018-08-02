@@ -12,11 +12,15 @@ const log = require('fancy-log');
 
 const devCompiler = webpack(webpackConfig)
 
+/**
+ * webpack 任务，在 watch 之后
+ */
 gulp.task('webpack:build', function () {
+  console.log('??????')
   // Reload renderer process
   devCompiler.run(function (err, status) {
     if (err) {
-      throw PluginError('webpack:build-dev', err, { showStack: true });
+      throw PluginError('webpack:build', err, { showStack: true });
     }
     /**
      * 这里第一次导致重新 reload 一遍
