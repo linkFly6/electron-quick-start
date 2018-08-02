@@ -6,7 +6,7 @@
       "es5",
       "esnext"
     ],
-    "outDir": "../output.server",
+    "outDir": "../../dist/main",
     "sourceMap": true,
     "strict": true,
     "isolatedModules": false,

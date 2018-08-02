@@ -12,7 +12,7 @@ let common_config = {
         use: 'ts-loader',
         exclude: [
           /node_modules/,
-          path.resolve(__dirname, "dist/renderer")
+          path.resolve(__dirname, "")
         ]
       }
     ]

@@ -2,14 +2,15 @@
   "name": "marknote",
   "version": "0.0.1",
   "description": "Markdown editor app for evernote",
-  "main": "dist/index.js",
+  "main": "dist/main/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run pack & npm run start",
     "pack": "webpack --config webpack.config.js",
     "start": "npm run clean & tsc --locale zh-CN -p ./src & electron",
-    "clean": "rm -rf ./dist",
-    "build": "tsc --locale zh-CN -p ./src --skipLibCheck --sourceMap false"
+    "clean": "rm -rf ./dist/main",
+    "main": "electron .",
+    "build": "tsc --locale zh-CN -p ./src/main --skipLibCheck --sourceMap false"
   },
   "repository": {
     "type": "git",
