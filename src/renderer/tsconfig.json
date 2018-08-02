@@ -1,0 +1,41 @@
+{
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "compilerOptions": {
+    "target": "es6",
+    // "module": "commonjs",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "rootDir": ".",
+    "allowJs": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    // 从 tslib 导入外部帮助库: 比如__extends，__rest等
+    "importHelpers": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "~/*": [
+        "../server/*"
+      ]
+    }
+  },
+  "compileOnSave": true,
+  "files": [
+    "types/global.d.ts"
+  ],
+}

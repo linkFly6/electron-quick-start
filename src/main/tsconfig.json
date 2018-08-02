@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "lib": [
+      "es5",
+      "esnext"
+    ],
+    "outDir": "../output.server",
+    "sourceMap": true,
+    "strict": true,
+    "isolatedModules": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "removeComments": true,
+    // 从 tslib 导入外部帮助库: 比如__extends，__rest等
+    // "importHelpers": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "listFiles": true,
+    "baseUrl": ".",
+    // "paths": {
+    //   // 给引用的模块取别名 https://decembersoft.com/posts/say-goodbye-to-relative-paths-in-typescript-imports/
+    //   "types": ["types/index.d.ts"],
+    //   "types/*": ["types/*"]
+    // }
+  },
+  "include": [
+    "**/*.ts",
+  ],
+  // "exclude": [
+  //   "node_modules",
+  //   "package.json",
+  // ],
+  "compileOnSave": true
+}
