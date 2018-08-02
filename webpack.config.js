@@ -24,23 +24,13 @@ let common_config = {
 
 module.exports = [
   Object.assign({}, common_config, {
-    target: 'electron-main',
-    entry: {
-      renderrer: './src/main/index.ts',
-    },
-    output: {
-      filename: '[name]-bundle.js',
-      path: path.resolve(__dirname, 'src/main/dist')
-    },
-  }),
-  Object.assign({}, common_config, {
     target: 'electron-renderer',
     entry: {
-      ui: './src/renderer/index.ts',
+      index: './src/renderer/index.ts',
     },
     output: {
       filename: '[name]-bundle.js',
-      path: path.resolve(__dirname, 'src/renderer/dist')
+      path: path.resolve(__dirname, 'dist/renderer')
     },
   })
 ]

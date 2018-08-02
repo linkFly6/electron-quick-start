@@ -34,8 +34,8 @@
       ]
     }
   },
-  "compileOnSave": true,
-  "files": [
+  "compileOnSave": true
+  // "files": [
     // "types/global.d.ts"
-  ],
+  // ],
 }
