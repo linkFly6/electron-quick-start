@@ -12,6 +12,9 @@ let common_config = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
+        // options: {
+          // configFile: path.resolve(__dirname, './src/renderer/tsconfig.json'),
+        // }
         // exclude: [
         //   /node_modules/,
         //   path.resolve(__dirname, '')

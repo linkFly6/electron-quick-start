@@ -4,13 +4,15 @@
   "description": "Markdown editor app for evernote",
   "main": "dist/main/index.js",
   "scripts": {
+    "start": "NODE_ENV=development concurrently -k -p \"[{name}]\" -n \"main,renderer,electron\" -c \"bgBlue.white.bold,bgGreen.white.bold,yellow.bold\" \"npm run watch:main\" \"npm run build:renderer\" \"npm run start:main\" ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run pack & npm run start",
-    "pack": "webpack --config webpack.config.js",
-    "start": "npm run clean & tsc --locale zh-CN -p ./src & electron",
+    "start:main": "electron .",
+    "watch:main": "tsc -w --skipLibCheck -p ./src/main",
+    "build:renderer": "webpack --config webpack.config.js",
+    "build:main": "tsc --locale zh-CN -p ./src/main --skipLibCheck --sourceMap false",
     "clean": "rm -rf ./dist/main",
     "main": "electron .",
-    "build": "tsc --locale zh-CN -p ./src/main --skipLibCheck --sourceMap false"
+    "build": "npm run clean & npm run build:main & npm run build:renderer"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-router": "^4.0.30",
     "@types/react-router-dom": "^4.3.0",
+    "concurrently": "^3.6.1",
     "css-loader": "^1.0.0",
     "electron": "^2.0.6",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -44,7 +47,7 @@
     "stylus-loader": "^3.0.2",
     "ts-loader": "^4.4.2",
     "ts-node": "^7.0.0",
-    "typescript": "^3.0.1",
+    "typescript": "^2.9.2",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0"
