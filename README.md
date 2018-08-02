@@ -15,3 +15,12 @@ npm i --dd
 # 启动应用
 npm start
 ```
+
+## 常用工具
+
+```
+strip-json-comments -> 解析可以包含注释的 json
+electron-log -> electron log 管理
+nedb -> 本地化数据库
+electron-settings -> 程序设置保存(从 atom 里抽离)
+```

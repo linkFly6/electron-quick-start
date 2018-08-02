@@ -1,5 +1,6 @@
 {
   "name": "marknote",
+  "productName": "marknote",
   "version": "0.0.1",
   "description": "Markdown editor app for evernote",
   "main": "dist/main/index.js",
@@ -29,10 +30,12 @@
   "homepage": "https://github.com/moyus/marknote#readme",
   "devDependencies": {
     "@types/electron": "^1.6.10",
+    "@types/electron-settings": "^3.1.1",
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
     "@types/react-router": "^4.0.30",
     "@types/react-router-dom": "^4.3.0",
+    "@types/strip-json-comments": "0.0.30",
     "css-loader": "^1.0.0",
     "electron": "^2.0.6",
     "electron-connect": "^0.6.3",
@@ -53,12 +56,18 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "electron-log": "^2.2.16",
+    "electron-settings": "^3.2.0",
     "history": "^4.7.2",
+    "marked": "^0.4.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
+    "nedb": "^1.8.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "strip-json-comments": "^2.0.1"
   }
 }
