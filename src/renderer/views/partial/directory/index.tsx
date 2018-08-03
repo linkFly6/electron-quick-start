@@ -11,9 +11,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import FolderIcon from '@material-ui/icons/Folder';
+import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
@@ -46,25 +45,25 @@ export default class Home extends BaseComponent<IProps & RouteProps, IState> {
         >
           <ListItem button>
             <ListItemIcon>
-              <SendIcon />
+              <FolderIcon />
             </ListItemIcon>
-            <ListItemText inset primary="Sent mail" />
+            <ListItemText inset primary="发现音乐" />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
-              <DraftsIcon />
+              <FolderIcon />
             </ListItemIcon>
             <ListItemText inset primary="Drafts" />
           </ListItem>
           <ListItem button onClick={this.handleClick}>
             <ListItemIcon>
-              <InboxIcon />
+              {this.state.open ? <FolderOpenIcon /> : <FolderIcon />}
             </ListItemIcon>
             <ListItemText inset primary="Inbox" />
             {this.state.open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
+            <List component="div" disablePadding className="inset">
               <ListItem button>
                 <ListItemIcon>
                   <StarBorder />
