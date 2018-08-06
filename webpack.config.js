@@ -40,14 +40,14 @@ let common_config = {
         use: [
           'style-loader',
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              // 'plugins': [
-              //   require('postcss-pxtorem')({ rootValue: 100, propWhiteList: [] })
-              // ]
-            }
-          }
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     // 'plugins': [
+          //     //   require('postcss-pxtorem')({ rootValue: 100, propWhiteList: [] })
+          //     // ]
+          //   }
+          // }
         ],
       },
       {

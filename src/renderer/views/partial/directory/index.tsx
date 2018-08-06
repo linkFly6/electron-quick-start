@@ -4,19 +4,10 @@ import './style.styl';
 import UserStore from '@/store/user-store';
 import { BaseComponent } from '@/components/base-component';
 import { RouteProps } from 'react-router-dom';
-// import { withStyles } from '@material-ui/core/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import FolderIcon from '@material-ui/icons/Folder';
-import FolderOpenIcon from '@material-ui/icons/FolderOpen';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import Assignment from '@material-ui/icons/Assignment';
-import Divider from '@material-ui/core/Divider';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+
+const { Header, Content, Footer, Sider } = Layout;
+const SubMenu = Menu.SubMenu;
 
 export interface IProps {
   userStore: UserStore;
@@ -40,51 +31,78 @@ export default class Home extends BaseComponent<IProps & RouteProps, IState> {
   public render() {
     return (
       <div className={'partial-directory'}>
-        <List
-          component="nav"
-          subheader={
-            <div>
-              <ListSubheader component="div">Nested List Items</ListSubheader>
-              <Divider />
-            </div>
-          }
+        <Sider
+          collapsible
+        // collapsed={this.state.collapsed}
+        // onCollapse={this.onCollapse}
         >
-          <ListItem button>
-            <ListItemIcon>
-              <FolderIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="mac 笔记" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <FolderIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="JavaScript" />
-          </ListItem>
-          <ListItem button onClick={this.handleClick}>
-            <ListItemIcon>
-              {this.state.open ? <FolderOpenIcon /> : <FolderIcon />}
-            </ListItemIcon>
-            <ListItemText inset primary="Web 相关" />
-            {this.state.open ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-          <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding className="inset">
-              <ListItem button>
-                <ListItemIcon>
-                  <Assignment />
-                </ListItemIcon>
-                <ListItemText inset primary="性能优化" />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon>
-                  <Assignment />
-                </ListItemIcon>
-                <ListItemText inset primary="很长很长很长很长很长很长很长很长很长" title="很长很长很长很长很长很长很长很长很长"/>
-              </ListItem>
-            </List>
-          </Collapse>
-        </List>
+          <div className="logo" />
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu.Item key="1">
+              <Icon type="folder" />
+              <span>内容很长内容很长内容很长内容很长内容很长内容很长内容很长内容很长</span>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <SubMenu
+              key="sub1"
+              title={<span><Icon type="folder" /><span>HTML</span></span>}
+            >
+              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="4">Bill</Menu.Item>
+              <Menu.Item key="5">Alex</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub2"
+              title={<span><Icon type="folder" /><span>JavaScript</span></span>}
+            >
+              <Menu.Item key="6">Team 1</Menu.Item>
+              <Menu.Item key="8">内容很长内容很长内容很长内容很长内容很长内容很长内容很长内容很长内容很长</Menu.Item>
+            </SubMenu>
+            {/* <Menu.Item key="9">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="10">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="11">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="12">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="13">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="14">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="15">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="16">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="17">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item>
+            <Menu.Item key="18">
+              <Icon type="folder" />
+              <span>Option 2</span>
+            </Menu.Item> */}
+          </Menu>
+        </Sider>
       </div>
     );
   }

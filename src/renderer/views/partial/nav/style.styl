@@ -1,7 +1,8 @@
-  // 导航栏
+$navigationBgColor = #2f3241
+// 导航栏
 .partial.app-navigation
-  background #2f3241
-  height 3rem
+  background $navigationBgColor
+  height 4rem
   // 因为干掉了系统的标题栏，所以得让导航栏可以模拟的像标题栏一样可以拖动
   // 注意 mac os 10.12.1 中，如果打开开发者工具，则就不能拖动了，这应该是个 bug
   -webkit-user-select: none;
@@ -19,10 +20,14 @@
     color #fafafa
   .account
     float right
+    padding-top .5rem
     color #fff
-    .account-btn
-      $width = 30px
-      width $width
-      height $width
-      .account-btn-icon, .more-btn-icon
-        color #fff
+    .ant-btn
+      background-color $navigationBgColor
+      border-color $navigationBgColor
+    .split-line
+      width 1px
+      height 1rem
+      background-color #ccc
+      display inline-block
+      vertical-align middle
