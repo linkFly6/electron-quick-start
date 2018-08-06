@@ -7,7 +7,23 @@ let win: BrowserWindow | null;
 
 function createWindow() {
   // 创建浏览器窗口。
-  win = new BrowserWindow({ width: 1024, height: 768 });
+  win = new BrowserWindow({
+    /**
+     * 配置文档：
+     * https://electronjs.org/docs/api/browser-window#new-browserwindowoptions
+     */
+    width: 1024,
+    height: 768,
+    center: true,
+    // 在 mac os 上全屏化按钮是否可用
+    fullscreenable: false,
+    // 禁止最大化
+    maximizable: false, 
+    // 禁止缩放大小
+    resizable: false, 
+    frame: false, // windows 下面隐藏标题栏
+    titleBarStyle: 'hidden', // mac os 下面隐藏标题栏
+  });
 
   // 然后加载应用的 index.html。
   // @TODO dist 目录要修正
@@ -15,8 +31,6 @@ function createWindow() {
 
   // 打开开发者工具
   win.webContents.openDevTools();
-
-  console.log(process.env);
 
   if (process.env.NODE_ENV === 'development') {
     // Connect to server process

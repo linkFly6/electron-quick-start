@@ -1,8 +1,18 @@
 @require './lib/normalize'
 
 .app
+  width 100%
+  height 100%
   display flex
-  // .app-directory
-  .app-content
+  flex-direction column
+  .app-body
     flex 1
-    
+    display flex
+    // .app-directory
+    .app-content
+      flex 1
+    .app-split-ine
+      width 1px
+      background rgba(0, 0, 0, 0.12)
+      height 100%
+      display block

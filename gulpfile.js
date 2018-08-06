@@ -4,6 +4,7 @@
  * 提供的思路
  */
 const gulp = require('gulp')
+const ts = require('gulp-typescript')
 const electron = require('electron-connect').server.create()
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js')
@@ -16,7 +17,6 @@ const devCompiler = webpack(webpackConfig)
  * webpack 任务，在 watch 之后
  */
 gulp.task('webpack:build', function () {
-  console.log('??????')
   // Reload renderer process
   devCompiler.run(function (err, status) {
     if (err) {
@@ -33,13 +33,24 @@ gulp.task('webpack:build', function () {
 })
 
 
+const tsProject = ts.createProject('src/main/tsconfig.json')
+
+gulp.task('ts:main', function () {
+  return tsProject.src().pipe(tsProject()).pipe(gulp.dest('dist/main')).on('end', () => {
+    electron.restart()
+  })
+})
+
+
 gulp.task('watch', function () {
 
   // Start browser process
-  electron.start()
+  tsProject.src().pipe(tsProject()).pipe(gulp.dest('dist/main')).on('end', () => {
+    electron.start()
+  })
 
   // Restart browser process
-  gulp.watch('src/main/**', electron.restart)
+  gulp.watch('src/main/**', ['ts:main'])
 
   gulp.watch('src/renderer/**', ['webpack:build'])
 })

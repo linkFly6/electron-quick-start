@@ -1,0 +1,28 @@
+  // 导航栏
+.partial.app-navigation
+  background #2f3241
+  height 3rem
+  // 因为干掉了系统的标题栏，所以得让导航栏可以模拟的像标题栏一样可以拖动
+  // 注意 mac os 10.12.1 中，如果打开开发者工具，则就不能拖动了，这应该是个 bug
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  clear both
+  padding 1rem 1rem 0
+  .no-drag {
+    // drag 是继承属性
+    -webkit-app-region: no-drag;
+  }
+  .app-nav-txt
+    // 这个是留给窗口自带的放大缩小按钮的
+    margin-top 1rem
+    text-align center
+    color #fafafa
+  .account
+    float right
+    color #fff
+    .account-btn
+      $width = 30px
+      width $width
+      height $width
+      .account-btn-icon, .more-btn-icon
+        color #fff

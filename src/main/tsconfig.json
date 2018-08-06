@@ -23,6 +23,8 @@
     "allowJs": true,
     "listFiles": true,
     "baseUrl": ".",
+    // electron 里面有类型报错，所以跳过检查
+    "skipLibCheck": true,
     // "paths": {
     //   // 给引用的模块取别名 https://decembersoft.com/posts/say-goodbye-to-relative-paths-in-typescript-imports/
     //   "types": ["types/index.d.ts"],

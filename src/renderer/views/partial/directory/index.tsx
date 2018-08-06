@@ -15,7 +15,8 @@ import FolderIcon from '@material-ui/icons/Folder';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
+import Assignment from '@material-ui/icons/Assignment';
+import Divider from '@material-ui/core/Divider';
 
 export interface IProps {
   userStore: UserStore;
@@ -38,37 +39,48 @@ export default class Home extends BaseComponent<IProps & RouteProps, IState> {
   }
   public render() {
     return (
-      <div className={'component-directory'}>
+      <div className={'partial-directory'}>
         <List
           component="nav"
-          subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
+          subheader={
+            <div>
+              <ListSubheader component="div">Nested List Items</ListSubheader>
+              <Divider />
+            </div>
+          }
         >
           <ListItem button>
             <ListItemIcon>
               <FolderIcon />
             </ListItemIcon>
-            <ListItemText inset primary="发现音乐" />
+            <ListItemText inset primary="mac 笔记" />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <FolderIcon />
             </ListItemIcon>
-            <ListItemText inset primary="Drafts" />
+            <ListItemText inset primary="JavaScript" />
           </ListItem>
           <ListItem button onClick={this.handleClick}>
             <ListItemIcon>
               {this.state.open ? <FolderOpenIcon /> : <FolderIcon />}
             </ListItemIcon>
-            <ListItemText inset primary="Inbox" />
+            <ListItemText inset primary="Web 相关" />
             {this.state.open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding className="inset">
               <ListItem button>
                 <ListItemIcon>
-                  <StarBorder />
+                  <Assignment />
                 </ListItemIcon>
-                <ListItemText inset primary="Starred" />
+                <ListItemText inset primary="性能优化" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <Assignment />
+                </ListItemIcon>
+                <ListItemText inset primary="很长很长很长很长很长很长很长很长很长" title="很长很长很长很长很长很长很长很长很长"/>
               </ListItem>
             </List>
           </Collapse>
