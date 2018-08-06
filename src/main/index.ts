@@ -18,9 +18,9 @@ function createWindow() {
     // 在 mac os 上全屏化按钮是否可用
     fullscreenable: false,
     // 禁止最大化
-    maximizable: false, 
+    // maximizable: false, 
     // 禁止缩放大小
-    resizable: false, 
+    // resizable: false, 
     frame: false, // windows 下面隐藏标题栏
     titleBarStyle: 'hidden', // mac os 下面隐藏标题栏
   });

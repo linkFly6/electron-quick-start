@@ -25,23 +25,21 @@ export default class App extends React.Component<any, any> {
           <Router history={history}>
             <div className="app">
               <Nav />
-              <Layout>
-                <section className="app-body">
-                  <div className="app-directory">
-                    <Route component={Directory} />
-                  </div>
-                  <div className="app-split-ine"></div>
-                  <div className="app-content">
-                    <Layout>
-                      <Switch>
-                        <Route path="/demo" component={DemoView} />
-                        <Route component={HomeView} />
-                      </Switch>
-                    </Layout>
-                    {/* 妈蛋 preact 没有对应的 mobox-react-devtools 工具 */}
-                    {/* {DevTools && search<{ debug?: string }>().debug ? <DevTools /> : null} */}
-                  </div>
-                </section>
+              <Layout className="app-body">
+                <div className="app-directory">
+                  <Route component={Directory} />
+                </div>
+                <div className="app-split-ine"></div>
+                <div className="app-content">
+                  <Layout>
+                    <Switch>
+                      <Route path="/demo" component={DemoView} />
+                      <Route component={HomeView} />
+                    </Switch>
+                  </Layout>
+                  {/* 妈蛋 preact 没有对应的 mobox-react-devtools 工具 */}
+                  {/* {DevTools && search<{ debug?: string }>().debug ? <DevTools /> : null} */}
+                </div>
               </Layout>
             </div>
           </Router>

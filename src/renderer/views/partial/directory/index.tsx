@@ -36,7 +36,7 @@ export default class Home extends BaseComponent<IProps & RouteProps, IState> {
         // collapsed={this.state.collapsed}
         // onCollapse={this.onCollapse}
         >
-          <div className="logo" />
+          <div className="app-logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
               <Icon type="folder" />
